@@ -154,6 +154,15 @@ const Home = () => {
         }
     }
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMessage(false);
+        }, 5000);
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [message])
+
     return (
         <Grid container className={classes.grid}>
             <Grid item xs={3} className={classes.left}>
@@ -194,7 +203,7 @@ const Home = () => {
                 {exit ?
                     <Typography component='div' className={classes.payMoney}>
                         <Typography component="p">Please Submit Parking Fee - ${amount}</Typography>
-                        <TextField type="number" id="standard-basic" className={classes.form} label="Car Number" value={payment} onChange={(e) => setPayment(parseInt(e.target.value))} />
+                        <TextField type="number" id="standard-basic" className={classes.form} label="Enter Your Amount" value={payment} onChange={(e) => setPayment(parseInt(e.target.value))} />
                         {
                             user ? <Typography component="p" className={classes.incorrect}>Please Submit the correct amount!</Typography> : ""
                         }
