@@ -104,6 +104,7 @@ const Home = () => {
             })
             setstoreSpace((storeSpace) => [...storeSpace, blankSpace[getRandomValue]]);
             setBlankSpace(newBlankValue);
+            setCarNumber("");
         } else {
             setMessage(true);
             setCarNumber("");
