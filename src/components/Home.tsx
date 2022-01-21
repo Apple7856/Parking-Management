@@ -165,20 +165,20 @@ const Home = () => {
     }, [message])
 
     return (
-        <Grid container className={classes.grid}>
+        <Grid container className={classes.grid} data-testid="homeData">
             <Grid item xs={3} className={classes.left}>
                 {
                     hideSlot ?
                         <Typography component='div' className={classes.newCar}>
-                            <TextField type="number" id="standard-basic" label="Create Parking Slot" value={slot} onChange={(e) => setSlot(parseInt(e.target.value))} />
-                            <Button variant="contained" color="primary" disabled={slot ? false : true} onClick={() => addNewSlot()}>
+                            <TextField type="number" data-testid="createParkingSlotInput" id="standard-basic" label="Create Parking Slot" value={slot} onChange={(e) => setSlot(parseInt(e.target.value))} />
+                            <Button data-testid="createSlotButton" variant="contained" color="primary" disabled={slot ? false : true} onClick={() => addNewSlot()}>
                                 Create Slot
                             </Button>
                         </Typography>
                         :
                         <Typography component='div' className={classes.newCar}>
                             <TextField id="standard-basic" label="Enter Car Number" value={carNumber} onChange={(e) => setCarNumber(e.target.value.toUpperCase())} />
-                            <Button variant="contained" color="primary" disabled={carNumber ? false : true} onClick={() => addNewCar()}>
+                            <Button data-testid="addCarButton" variant="contained" color="primary" disabled={carNumber ? false : true} onClick={() => addNewCar()}>
                                 Add Car
                             </Button>
                         </Typography>

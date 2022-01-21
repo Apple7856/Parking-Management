@@ -17,7 +17,7 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar variant="dense">
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" color="inherit" data-testid="Heading">
             Car Parking Management
           </Typography>
         </Toolbar>
